@@ -1,0 +1,14 @@
+﻿using Microsoft.EntityFrameworkCore;
+using UserService.Entities;
+
+namespace UserService.Data
+{
+    public class UserServiceContext : DbContext
+    {
+        public DbSet<User> User { get; set; }
+        public UserServiceContext(DbContextOptions<UserServiceContext> options) : base(options)
+        {
+            Database.EnsureCreated();
+        }
+    }
+}
